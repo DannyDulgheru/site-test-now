@@ -4496,7 +4496,7 @@ function create_fragment$a(ctx) {
 						"url": "",
 						"size": null
 					},
-					"title": "Prolan & Co"
+					"title": "designal"
 				},
 				site_nav: [
 					{
@@ -4527,9 +4527,7 @@ function create_fragment$a(ctx) {
 			props: {
 				image: {
 					"alt": "",
-					"src": "https://images.unsplash.com/photo-1479030160180-b1860951d696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-					"url": "https://images.unsplash.com/photo-1479030160180-b1860951d696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-					"size": null
+					"url": "https://wlesszpjogwubahtjsez.supabase.co/storage/v1/object/public/images/b3bceed5-33bb-4d67-85a1-79f8a44b979c/SRBU0065-min.JPG1684830373266"
 				}
 			}
 		});

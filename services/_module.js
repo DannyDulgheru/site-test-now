@@ -3876,7 +3876,7 @@ function create_fragment$5(ctx) {
 						"url": "",
 						"size": null
 					},
-					"title": "Prolan & Co"
+					"title": "designal"
 				},
 				site_nav: [
 					{

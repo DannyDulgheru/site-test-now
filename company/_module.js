@@ -4232,7 +4232,7 @@ function create_fragment$8(ctx) {
 						"url": "",
 						"size": null
 					},
-					"title": "Prolan & Co"
+					"title": "designal"
 				},
 				site_nav: [
 					{
