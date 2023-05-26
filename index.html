@@ -3,426 +3,76 @@
 
 <head>
     <meta name="generator" content="Primo" />
-    <!-- HEAD_svelte-1funr7q_START -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+    <!-- HEAD_svelte-m5zvi1_START -->
     <style>
-        /* Reset & standardize default styles */
-        @import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
+        @import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css");
 
-        /* Design tokens (apply to components) */
-        :root {
-            /* Custom theme options */
-            --color-accent: rebeccapurple;
-
-            /* Base values */
-            --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-            --border-radius: 8px;
-            --border-color: #cbcace;
-        }
-
-        /* Root element (use instead of `body`) */
         #page {
             font-family: system-ui, sans-serif;
-            color: white;
-            line-height: 1.2;
-            font-size: 1.125rem;
-            background: black;
+            color: var(--color);
+            line-height: 1.6;
+            font-size: 1rem;
+            background: var(--background);
         }
 
-        /* Elements */
         .section-container {
-            max-width: 1300px;
+            max-width: var(--max-width, 1000px);
             margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        a.link {
-            line-height: 1.3;
-            font-weight: 400;
-            border-bottom: 2px solid;
-            transform: translateY(-2px);
-            /* move link back into place */
-            transition: var(--transition, 0.1s border);
-        }
-
-        a.link:hover {
-            border-color: transparent;
+            padding: 3rem var(--padding, 1rem);
         }
 
         .heading {
-            font-size: clamp(2rem, 10vw, 3rem);
-            font-weight: 500;
-            line-height: 1.3;
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 700;
+            margin: 0;
         }
 
         .button {
-            color: #111;
-            font-size: 1rem;
-            background: white;
-            border-radius: 2rem;
-            padding: 18px 28px;
-            transition: var(--transition, 0.1s box-shadow);
-            border: 0;
+            color: white;
+            background: var(--color-accent);
+            border-radius: 5px;
+            padding: 8px 20px;
+            transition: var(--transition);
         }
-
-        /* reset */
 
         .button:hover {
-            box-shadow: 0 0 0 2px var(--color-accent, rebeccapurple);
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .button.is-inverted {
-            background: black;
-            color: white;
+        .button.inverted {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
         }
-
-        /* Content Section */
-        .content {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-            line-height: 1.4;
-            font-size: 2rem;
-        }
-
-        .content>* {
-            max-width: 600px;
-        }
-
-        .content p {
-            padding: 0.25rem 0;
-        }
-
-        .content img {
-            width: 100%;
-            margin: 2rem 0;
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-        }
-
-        .content a.link {}
-
-        .content h1 {
-            font-size: 3.5rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .content h2 {
-            font-size: 2.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .content h3 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .content ul {
-            list-style: disc;
-            padding: 0.5rem 0;
-            padding-left: 1.25rem;
-        }
-
-        .content ol {
-            list-style: decimal;
-            padding: 0.5rem 0;
-            padding-left: 1.25rem;
-        }
-
-        .content blockquote {
-            padding: 2rem;
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-        }
-
-        .content h1 {
-            padding-top: 10rem;
-            max-width: 800px;
-        }
-    </style><!-- HEAD_svelte-1funr7q_END -->
-    <style>
-        .section-container.svelte-sip8mq.svelte-sip8mq {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .logo.svelte-sip8mq.svelte-sip8mq {
-            font-size: 1.5rem;
-            font-weight: 600;
-            line-height: 1.2
-        }
-
-        .desktop-nav.svelte-sip8mq.svelte-sip8mq {
-            display: none;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%
-        }
-
-        .desktop-nav.svelte-sip8mq nav.svelte-sip8mq {
-            display: flex;
-            gap: 2rem
-        }
-
-        .desktop-nav.svelte-sip8mq nav a.link.svelte-sip8mq {
-            border-color: transparent;
-            transition: border-color 0.1s;
-            font-size: 0.95rem
-        }
-
-        .desktop-nav.svelte-sip8mq nav a.link.svelte-sip8mq:hover {
-            border-color: initial
-        }
-
-        @media(min-width: 800px) {
-            .desktop-nav.svelte-sip8mq.svelte-sip8mq {
-                display: flex
-            }
-        }
-
-        .mobile-nav.svelte-sip8mq.svelte-sip8mq {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            font-weight: 500
-        }
-
-        @media(min-width: 800px) {
-            .mobile-nav.svelte-sip8mq.svelte-sip8mq {
-                display: none
-            }
-        }
-
-        #popup.svelte-sip8mq.svelte-sip8mq {
-            font-size: 1.25rem;
-            display: grid;
-            gap: 1rem;
-            position: absolute;
-            text-align: center;
-            background-color: var(--background-color, white);
-            box-shadow: var(--box-shadow, 0px 4px 30px rgba(0, 0, 0, 0.1));
-            border-radius: var(--border-radius);
-            inset: 0.5rem;
-            bottom: initial;
-            padding: 2rem;
-            z-index: 1;
-            color: black
-        }
-
-        #popup.svelte-sip8mq button#close.svelte-sip8mq {
-            position: absolute;
-            right: 1rem;
-            top: 1rem
-        }
-
-        .section-container.svelte-1lkyxko.svelte-1lkyxko {
-            display: grid;
-            gap: 1.5rem;
-            place-items: center;
-            text-align: center;
-            background: ghostwhite;
-            color: black
-        }
-
-        .heading.svelte-1lkyxko.svelte-1lkyxko {
-            font-size: 3rem;
-            font-weight: 800
-        }
-
-        @media(min-width: 700px) {
-            .heading.svelte-1lkyxko.svelte-1lkyxko {
-                font-size: 4rem
-            }
-        }
-
-        .subheading.svelte-1lkyxko.svelte-1lkyxko {
-            font-size: 1.25rem
-        }
-
-        .buttons.svelte-1lkyxko.svelte-1lkyxko {
-            margin-top: 0.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem
-        }
-
-        .buttons.svelte-1lkyxko .button.svelte-1lkyxko:not(:only-child):last-child {
-            background: inherit;
-            border: 2px solid var(--color-accent, rebeccapurple);
-            color: var(--color, #222)
-        }
-
-        .section-container.svelte-2w0b9m.svelte-2w0b9m {
-            display: grid;
-            gap: 0.5rem;
-            place-items: center
-        }
-
-        .heading.svelte-2w0b9m.svelte-2w0b9m {
-            text-align: center
-        }
-
-        .subheading.svelte-2w0b9m.svelte-2w0b9m {
-            text-align: center;
-            margin-bottom: 2rem
-        }
-
-        .tiers.svelte-2w0b9m.svelte-2w0b9m {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            place-items: start;
-            gap: 3rem
-        }
-
-        .tiers.svelte-2w0b9m .tier.svelte-2w0b9m {
-            display: grid;
-            gap: 2rem;
-            border: 1px solid var(--border-color, #eee);
-            border-radius: var(--border-radius);
-            padding: 2.5rem 2rem
-        }
-
-        .tiers.svelte-2w0b9m .tier header.svelte-2w0b9m {
-            display: grid;
-            gap: 0.5rem
-        }
-
-        .tiers.svelte-2w0b9m .tier header .title.svelte-2w0b9m {
-            font-size: 0.875rem;
-            color: var(--color-accent, rebeccapurple);
-            border: 2px solid var(--color-accent, rebeccapurple);
-            border-radius: 2rem;
-            font-weight: 500;
-            padding: 0.125rem 0.5rem;
-            justify-self: flex-start
-        }
-
-        .tiers.svelte-2w0b9m .tier header .price.svelte-2w0b9m {
-            font-weight: bold
-        }
-
-        .tiers.svelte-2w0b9m .tier header .price span.numerator.svelte-2w0b9m {
-            font-size: 2rem
-        }
-
-        .tiers.svelte-2w0b9m .tier hr.svelte-2w0b9m {
-            width: 100%;
-            border-color: var(--border-color, #eee)
-        }
-
-        .tiers.svelte-2w0b9m .tier ul.features.svelte-2w0b9m {
-            display: grid;
-            gap: 1rem
-        }
-
-        .tiers.svelte-2w0b9m .tier ul.features li.svelte-2w0b9m {
-            display: flex;
-            align-items: center
-        }
-
-        .tiers.svelte-2w0b9m .tier ul.features li .icon.svelte-2w0b9m {
-            margin-right: 1rem;
-            color: var(--color-accent, rebeccapurple)
-        }
-
-        .tiers.svelte-2w0b9m .tier .button.svelte-2w0b9m {
-            width: 100%;
-            text-align: center
-        }
-    </style>
+    </style><!-- HEAD_svelte-m5zvi1_END -->
+    <style></style>
 </head>
 
 <body id="page">
 
-    <div class="section" id="section-21b68c11-8336-4245-95c6-652ae6dae472">
+    <div class="section" id="section-68b6ae28-0aff-4d70-9a28-6aebd59bcac6">
         <div class="component">
-            <header class="section-container svelte-sip8mq">
-                <div class="desktop-nav svelte-sip8mq"><a href="/" class="logo svelte-sip8mq">designal</a>
-                    <nav class="svelte-sip8mq"><a class="link svelte-sip8mq" href="/work">Work</a><a class="link svelte-sip8mq" href="/services">Services</a><a class="link svelte-sip8mq" href="/company">Company</a><a class="link svelte-sip8mq" href="/contact">Contact</a></nav>
-                </div>
-                <div class="mobile-nav svelte-sip8mq"><a href="/" class="logo svelte-sip8mq">designal</a>
-                    <button id="open" aria-label="Open mobile navigation"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="30" height="30" viewBox="0 0 24 24" class="iconify iconify--eva"><!-- HTML_TAG_START -->
-                            <g id="iconifySvelte0">
-                                <g id="iconifySvelte1">
-                                    <g id="iconifySvelte2" fill="currentColor">
-                                        <rect width="18" height="2" x="3" y="11" rx=".95" ry=".95" />
-                                        <rect width="18" height="2" x="3" y="16" rx=".95" ry=".95" />
-                                        <rect width="18" height="2" x="3" y="6" rx=".95" ry=".95" />
-                                    </g>
-                                </g>
-                            </g><!-- HTML_TAG_END -->
-                        </svg></button>
+            <header class="bg-blue-500 text-white py-4">
+                <div class="container mx-auto flex justify-between items-center px-4">
+                    <h1 class="text-2xl font-semibold">Designal</h1>
+                    <nav>
+                        <ul class="flex space-x-4">
+                            <li><a href="/" class="hover:text-gray-300">undefined</a></li>
+                            <li><a href="/" class="hover:text-gray-300">undefined</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
-        </div>
-    </div>
-    <div class="section" id="section-d05fa23a-c782-4737-b4e1-4f7a4f297aaf">
-        <div class="component">
-            <header class="section-container svelte-1lkyxko">
-                <h1 class="heading svelte-1lkyxko">Culpa enim laboris</h1>
-                <span class="subheading svelte-1lkyxko">Amet dolore excepteur</span>
-                <div class="buttons svelte-1lkyxko"><a class="button svelte-1lkyxko" href="/designal">do</a><a class="button svelte-1lkyxko" href="/designal">voluptate</a></div>
-            </header>
-        </div>
-    </div>
-    <div class="section" id="section-0d3a1c5b-6b8c-40a1-94d7-fbe96ac9f992">
-        <div class="component">
-            <section class="section-container svelte-2w0b9m">
-                <h2 class="heading svelte-2w0b9m">Erat velit scelerisque</h2>
-                <h3 class="subheading svelte-2w0b9m">Commodo elit at imperdiet dui accumsan sit</h3>
-                <div class="tiers svelte-2w0b9m">
-                    <div class="tier svelte-2w0b9m">
-                        <header class="svelte-2w0b9m">
-                            <h3 class="title svelte-2w0b9m">Free</h3>
-                            <div class="price svelte-2w0b9m"><span class="numerator svelte-2w0b9m">Free</span>
-                                <span class="denominator svelte-2w0b9m"></span>
-                            </div>
-                            <span class="description"><!-- HTML_TAG_START -->
-                                <p>Nisl tincidunt eget nullam non nisi. A lacus vestibulum sed arcu non. Quis lectus nulla at volutpat diam ut. </p><!-- HTML_TAG_END -->
-                            </span>
-                        </header>
-                        <hr class="svelte-2w0b9m">
-                        <ul class="features svelte-2w0b9m">
-                            <li class="svelte-2w0b9m"><span class="icon svelte-2w0b9m"></span>
-                                <span>Veniam lorem veniam</span>
-                            </li>
-                            <li class="svelte-2w0b9m"><span class="icon svelte-2w0b9m"></span>
-                                <span>Aliqua sunt lorem</span>
-                            </li>
-                        </ul>
-                        <a href="/" class="button svelte-2w0b9m">Sign Up</a>
-                    </div>
-                    <div class="tier svelte-2w0b9m">
-                        <header class="svelte-2w0b9m">
-                            <h3 class="title svelte-2w0b9m">Premium</h3>
-                            <div class="price svelte-2w0b9m"><span class="numerator svelte-2w0b9m">$100</span>
-                                <span class="denominator svelte-2w0b9m">/month</span>
-                            </div>
-                            <span class="description"><!-- HTML_TAG_START -->
-                                <p>A lacus vestibulum sed arcu non. Quis lectus nulla at volutpat diam ut. In nibh mauris cursus mattis.</p><!-- HTML_TAG_END -->
-                            </span>
-                        </header>
-                        <hr class="svelte-2w0b9m">
-                        <ul class="features svelte-2w0b9m">
-                            <li class="svelte-2w0b9m"><span class="icon svelte-2w0b9m"></span>
-                                <span>Ex est qui</span>
-                            </li>
-                            <li class="svelte-2w0b9m"><span class="icon svelte-2w0b9m"></span>
-                                <span>Enim mollit adipisicing</span>
-                            </li>
-                        </ul>
-                        <a href="/" class="button svelte-2w0b9m">Purchase</a>
-                    </div>
-                </div>
-            </section>
+
+            <main class="container mx-auto py-12 px-4">
+                <h2 class="text-3xl font-semibold mb-4">Hello there mother fucker</h2>
+                <p class="text-lg text-gray-700 mb-6">This is my first landing page in this cms, i hope its working normaly mother fucker</p>
+                <button href="/" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Go nahui</button>
+            </main>
+
+
+            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
         </div>
     </div>
 
